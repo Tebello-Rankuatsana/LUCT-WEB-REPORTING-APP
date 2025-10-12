@@ -1,0 +1,27 @@
+/* body{
+    font-family:sans-serif;
+    background-color: aqua;
+    background-image: url('../../images/empty-classroom-chairs-photo.jpg') no-repeat center cover;
+}
+.box-area{
+    width: 930px;
+}
+.main-part{
+    background-image: url('../../images/empty-classroom-chairs-photo.jpg') no-repeat center cover;
+}
+.container-of-containers{
+    background-image: url('../../images/empty-classroom-chairs-photo.jpg') no-repeat center cover;
+}
+.login-container{
+    background-color: aqua;
+} */
+.blur-container{
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+ }
+ .left-box{
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6));
+ }

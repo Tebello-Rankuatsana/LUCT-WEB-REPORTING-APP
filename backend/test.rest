@@ -1,0 +1,20 @@
+### TEST GET / WEBSITE
+# here we specify
+
+GET http://localhost:5000
+
+###TEST GET HOME / WEBSITE
+
+
+###DELETE ENDPOINT
+DELETE http://localhost:5000/api/data
+
+### testing the database with api endpoints
+
+### this one is still not working
+GET http://localhost:5000/testing
+
+### testing if the backend is working
+GET http://localhost:5000/api/login
+###
+GET http://localhost:5000/home

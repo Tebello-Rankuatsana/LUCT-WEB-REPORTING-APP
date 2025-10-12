@@ -1,0 +1,9 @@
+.sidebar ul li a span:hover{
+    color: rgb(102, 100, 100);
+}
+.sidebar ul li a i:hover{
+    color: rgb(102, 100, 100);
+}
+.sidebar ul li:hover{
+    cursor: pointer;
+}
