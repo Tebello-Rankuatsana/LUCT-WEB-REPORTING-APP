@@ -2,6 +2,7 @@
 A web reporting application used by institutions of higher learning
 
 Testing the application.
+
 1.Accessing the Lecturer Dashboard:
 email - Manthabiseng@gmail password - "mathematicsisgood"
 
