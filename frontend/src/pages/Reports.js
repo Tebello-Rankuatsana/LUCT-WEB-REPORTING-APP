@@ -1,7 +1,7 @@
-// src/pages/Reports.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import API from '../api/axios';
 
 function Reports() {
     const [formData, setFormData] = useState({
@@ -17,7 +17,7 @@ function Reports() {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const user = JSON.parse(localStorage.getItem('user'));
+    // const user = JSON.parse(localStorage.getItem('user'));
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -33,7 +33,7 @@ function Reports() {
         setError('');
 
         try {
-            await axios.post('http://localhost:5000/api/reports', {
+            await API.post('/api/reports', {
                 class_id: parseInt(formData.class_id),
                 week: parseInt(formData.week),
                 date: formData.date,

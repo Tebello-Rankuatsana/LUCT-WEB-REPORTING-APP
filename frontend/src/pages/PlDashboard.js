@@ -39,7 +39,6 @@ function PlDashboard() {
 
         <hr className="text-white mt-2" />
 
-        {/* Navigation */}
         <ul className="nav nav-pills flex-column mt-2 px-2 flex-grow-1">
           <li className="nav-item my-1">
             <Link
@@ -61,7 +60,6 @@ function PlDashboard() {
           </li>
         </ul>
 
-        {/* Profile Section */}
         <div className="px-2 mb-3">
           <hr className="text-white" />
           <Link
@@ -74,7 +72,6 @@ function PlDashboard() {
         </div>
       </div>
 
-      {/* Main Dashboard Content */}
       <div
         style={{
           marginLeft: collapsed ? "80px" : "250px",

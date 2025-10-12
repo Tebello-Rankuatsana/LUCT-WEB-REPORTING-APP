@@ -1,7 +1,7 @@
 import Sidebar from '../components/Sidebar';
-// import Navbar from '../components/Navbar';
 import Content from '../components/ContentOne';
 import { useState } from 'react';
+import API from '../api/axios';
 
 function Lecturer(){
     const [collapsed, setCollapsed] = useState(false);
@@ -19,7 +19,6 @@ function Lecturer(){
                 transition: "margin-left 0.3s",
                 width: `calc(100% - ${collapsed ? "80px" : "250px"})`,
                 }}>
-                {/* <Navbar/> */}
                 <Content/>
             </div>
         </div>

@@ -9,12 +9,12 @@ function StudentDashboard() {
 
   return (
     <div className="d-flex">
-      {/* Sidebar */}
+
       <div
         className="sidebar d-flex flex-column bg-black text-white vh-100 position-fixed"
         style={{ width: collapsed ? "80px" : "250px", transition: "width 0.3s" }}
       >
-        {/* Toggle button */}
+
         <button
           className="btn btn-light m-2"
           onClick={toggleSidebar}
@@ -23,7 +23,6 @@ function StudentDashboard() {
           <i className={`bi ${collapsed ? "bi-chevron-right" : "bi-chevron-left"}`}></i>
         </button>
 
-        {/* Logo */}
         <div className="px-3 mt-2 d-flex align-items-center">
           <Link to="/" className="d-flex align-items-center text-white text-decoration-none">
             <img
@@ -81,7 +80,6 @@ function StudentDashboard() {
           </li>
         </ul>
 
-        {/* Profile Section */}
         <div className="px-2 mb-3">
           <hr className="text-white" />
           <Link

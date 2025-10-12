@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import logo from '../images/logo.webp';
+import API from '../api/axios';
 
 function PrlDashboard() {
   const [collapsed, setCollapsed] = useState(false);
@@ -17,7 +18,7 @@ function PrlDashboard() {
   const fetchReports = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/reports');
+      const response = await API.get('/api/reports');
       setReports(response.data);
     } catch (error) {
       console.error('Error fetching reports:', error);
@@ -32,7 +33,6 @@ function PrlDashboard() {
 
   return (
     <div className="d-flex">
-      {/* Sidebar - unchanged */}
       <div
         className="sidebar d-flex flex-column bg-black text-white vh-100 position-fixed"
         style={{ width: collapsed ? "80px" : "250px", transition: "width 0.3s" }}
@@ -132,7 +132,6 @@ function PrlDashboard() {
             </div>
           </div>
 
-          {/* Reports Table Row */}
           <div className="row mt-3">
             <div className="col-12 p-2">
               <div className="bg-white p-3 border shadow-sm">
