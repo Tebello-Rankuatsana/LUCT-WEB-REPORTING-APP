@@ -13,7 +13,8 @@ const coursesRoutes = require('./routes/CoursesRoute.js');
 // middleware - authenticating a user
 // middleware(just before we hit the endpoints)
 app.use(cors({
-    origin: ['https://luct-web-app-frontend.onrender.com','http://localhost:3000'],
+    origin: ['https://luct-web-app-ver-2.onrender.com',
+    'http://localhost:3000'],
     credentials: true
 }))
 // middleware to parse JSON body
