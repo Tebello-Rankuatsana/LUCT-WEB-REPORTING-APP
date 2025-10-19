@@ -41,6 +41,7 @@ function Login(){
         
         } catch (err) {
             setError(err.reponse?.data?.message||'Login failed!!🙂‍')
+            console.log('API URL:', process.env.REACT_APP_API_URL);
             console.log(err)
         }
     };
