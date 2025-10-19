@@ -12,11 +12,15 @@ function StudentDashboard() {
 
       <div
         className="sidebar d-flex flex-column bg-black text-white vh-100 position-fixed"
-        style={{ width: collapsed ? "80px" : "250px", transition: "width 0.3s" }}
+        style=
+        {{ width: collapsed ? "80px" : "250px", 
+        transition: "width 0.3s",
+        // background: "linear-gradient(135deg, #304352 0%, #d7d2cc 100%, #dc2430 75%, #b31217 100%)",
+      }}
       >
 
         <button
-          className="btn btn-light m-2"
+          className="btn btn-light m-2 shadow-sm"
           onClick={toggleSidebar}
           style={{ alignSelf: collapsed ? "center" : "flex-end" }}
         >
@@ -34,7 +38,7 @@ function StudentDashboard() {
                 transition: "width 0.3s, height 0.3s",
               }}
             />
-            {!collapsed && <span className="fs-4 fw-bold ms-2">LIMKOKWING</span>}
+            {!collapsed && <span className="fs-4 fw-bold ms-2" >LIMKOKWING</span>}
           </Link>
         </div>
 
@@ -44,11 +48,11 @@ function StudentDashboard() {
         <ul className="nav nav-pills flex-column mt-2 px-2 flex-grow-1">
           <li className="nav-item my-1">
             <Link
-              to="/student-dashboard"
+              to="/"
               className="d-flex align-items-center p-2 text-white text-decoration-none"
             >
-              <i className="bi bi-speedometer2 fs-4 me-3"></i>
-              {!collapsed && <span className="fs-5 fw-bold">Dashboard</span>}
+              <i className="bi bi-door-open fs-4 me-3"></i>
+              {!collapsed && <span className="fs-5 fw-bold">Back</span>}
             </Link>
           </li>
           <li className="nav-item my-1">
@@ -87,7 +91,7 @@ function StudentDashboard() {
             className="d-flex align-items-center p-2 text-white text-decoration-none"
           >
             <i className="bi bi-person-circle fs-4 me-3"></i>
-            {!collapsed && <span className="fs-5 fw-bold">Profile</span>}
+            {!collapsed && <span className="fs-5 fw-bold">Student</span>}
           </Link>
         </div>
       </div>
@@ -166,7 +170,9 @@ function StudentDashboard() {
                         <td>A</td>
                         <td>Ntate Mahoasha</td>
                         <td>
-                          <button className="btn btn-sm btn-outline-dark">Rate Lecturer</button>
+                          <Link to="/rate-lecturer" className="btn btn-sm btn-outline-dark">
+                            Rate Lecturer
+                          </Link>
                         </td>
                       </tr>
                       <tr>
@@ -175,7 +181,9 @@ function StudentDashboard() {
                         <td>A+</td>
                         <td>Ntate K</td>
                         <td>
-                          <button className="btn btn-sm btn-outline-dark">Rate Lecturer</button>
+                          <Link to="/rate-lecturer" className="btn btn-sm btn-outline-dark">
+                            Rate Lecturer
+                          </Link>
                         </td>
                       </tr>
                       <tr>
@@ -184,7 +192,9 @@ function StudentDashboard() {
                         <td>A-</td>
                         <td>Dr. Linaoa</td>
                         <td>
-                          <button className="btn btn-sm btn-outline-dark">Rate Lecturer</button>
+                          <Link to="/rate-lecturer" className="btn btn-sm btn-outline-dark">
+                            Rate Lecturer
+                          </Link>
                         </td>
                       </tr>
                     </tbody>

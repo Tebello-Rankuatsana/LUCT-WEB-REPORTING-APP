@@ -1,13 +1,12 @@
 import Sidebar from '../components/Sidebar';
 import Content from '../components/ContentOne';
 import { useState } from 'react';
-import API from '../api/axios';
+// import API from '../api/axios';
 
 function Lecturer(){
     const [collapsed, setCollapsed] = useState(false);
 
     const toggleSidebar = () => setCollapsed(!collapsed);
-
 
     return(
         <div className="d-flex">

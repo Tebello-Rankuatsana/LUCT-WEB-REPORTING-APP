@@ -1,23 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../config/database');
+const pool = require('../db');
 
 // GET all lecturers
 router.get('/', async (req, res) => {
   try {
-    const query = `
-      SELECT 
-        u.id, 
-        u.name, 
-        u.email,
-        c.name as course
-      FROM users u
-      LEFT JOIN courses c ON u.id = c.lecturer_id
-      WHERE u.role = 'lecturer' 
-      ORDER BY u.name
-    `;
-    
-    const result = await pool.query(query);
+    const result = await pool.query(
+      'SELECT id, name, email, role FROM users WHERE role = $1 ORDER BY name',
+      ['lecturer']
+    );
     res.json(result.rows);
   } catch (error) {
     console.error('Error fetching lecturers:', error);

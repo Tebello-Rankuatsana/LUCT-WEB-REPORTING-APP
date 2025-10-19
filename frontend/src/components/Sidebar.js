@@ -39,8 +39,8 @@ function Sidebar({ collapsed, toggleSidebar }){
                             to="/"
                             className="d-flex align-items-center p-2 text-white text-decoration-none"
                         >
-                            <i className="bi bi-speedometer2 fs-4 me-3"></i>
-                            {!collapsed && <span className="fs-5 fw-bold">Dashboard</span>}
+                            <i className="bi bi-door-open fs-4 me-3"></i>
+                            {!collapsed && <span className="fs-5 fw-bold">Back</span>}
                         </Link>
                     </li>
                     <li className="nav-item my-1">
@@ -48,8 +48,26 @@ function Sidebar({ collapsed, toggleSidebar }){
                             to="/Report"
                             className="d-flex align-items-center p-2 text-white text-decoration-none"
                         >
-                            <i className="bi bi-grid fs-4 me-3"></i>
+                            <i className="bi bi-file-earmark-plus-fill fs-4 me-3"></i>
                             {!collapsed && <span className="fs-5 fw-bold">Report</span>}
+                        </Link>
+                    </li>
+                    <li className="nav-item my-1">
+                        <Link
+                            to="/Classes"
+                            className="d-flex align-items-center p-2 text-white text-decoration-none"
+                        >
+                            <i className="bi bi-people fs-4 me-3"></i>
+                            {!collapsed && <span className="fs-5 fw-bold">Classes</span>}
+                        </Link>
+                    </li>
+                    <li className="nav-item my-1">
+                        <Link
+                            to="/Ratings"
+                            className="d-flex align-items-center p-2 text-white text-decoration-none"
+                        >
+                            <i className="bi bi-star fs-4 me-3"></i>
+                            {!collapsed && <span className="fs-5 fw-bold">Ratings</span>}
                         </Link>
                     </li>
                 </ul>
@@ -60,7 +78,7 @@ function Sidebar({ collapsed, toggleSidebar }){
                 className="d-flex align-items-center p-2 text-white text-decoration-none"
                 >
                 <i className="bi bi-person-circle fs-4 me-3"></i>
-                {!collapsed && <span className="fs-5 fw-bold">Profile</span>}
+                {!collapsed && <span className="fs-5 fw-bold">Lecturer</span>}
                 </Link>
             </div>
         </div>

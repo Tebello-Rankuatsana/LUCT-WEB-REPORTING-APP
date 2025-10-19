@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import logo from '../images/logo.webp';
+// import API from "../api/axios";
 
 function PlDashboard() {
   const [collapsed, setCollapsed] = useState(false);
+  
+
+  // const navigate = useNavigate();
 
   const toggleSidebar = () => setCollapsed(!collapsed);
 
@@ -45,8 +49,17 @@ function PlDashboard() {
               to="/"
               className="d-flex align-items-center p-2 text-white text-decoration-none"
             >
-              <i className="bi bi-speedometer2 fs-4 me-3"></i>
-              {!collapsed && <span className="fs-5 fw-bold">Dashboard</span>}
+              <i className="bi bi-door-open fs-4 me-3"></i>
+              {!collapsed && <span className="fs-5 fw-bold">Back</span>}
+            </Link>
+          </li>
+          <li className="nav-item my-1">
+            <Link
+              to="/Classes"
+              className="d-flex align-items-center p-2 text-white text-decoration-none"
+            >
+              <i className="bi bi-list-ul fs-4 me-3"></i>
+              {!collapsed && <span className="fs-5 fw-bold">Classes</span>}
             </Link>
           </li>
           <li className="nav-item my-1">
@@ -54,8 +67,17 @@ function PlDashboard() {
               to="/Report"
               className="d-flex align-items-center p-2 text-white text-decoration-none"
             >
-              <i className="bi bi-grid fs-4 me-3"></i>
-              {!collapsed && <span className="fs-5 fw-bold">Report</span>}
+              <i className="bi bi-file-spreadsheet fs-4 me-3"></i>
+              {!collapsed && <span className="fs-5 fw-bold">Courses</span>}
+            </Link>
+          </li>
+          <li className="nav-item my-1">
+            <Link
+              to="/ViewLecturers"
+              className="d-flex align-items-center p-2 text-white text-decoration-none"
+            >
+              <i className="bi bi-file-earmark-person fs-4 me-3"></i>
+              {!collapsed && <span className="fs-5 fw-bold">View Lecturers</span>}
             </Link>
           </li>
         </ul>
@@ -67,7 +89,7 @@ function PlDashboard() {
             className="d-flex align-items-center p-2 text-white text-decoration-none"
           >
             <i className="bi bi-person-circle fs-4 me-3"></i>
-            {!collapsed && <span className="fs-5 fw-bold">Profile</span>}
+            {!collapsed && <span className="fs-5 fw-bold">Program Leader</span>}
           </Link>
         </div>
       </div>
@@ -134,15 +156,15 @@ function PlDashboard() {
                         <th>Course Name</th>
                         <th>Principal Lecturer</th>
                         <th>Assigned Lecturers</th>
-                        <th>Status</th>
-                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
+                      {/* {courses.map((course) => (
+                        <tr key={course.id}> */}
                       <tr>
                         <td>BIWD2110</td>
                         <td>Web Design</td>
-                        <td>Dr. Smith</td>
+                        <td>Mr Lieta</td>
                         <td>3</td>
                         <td>
                           <span className="badge bg-success">Active</span>
@@ -154,7 +176,7 @@ function PlDashboard() {
                       <tr>
                         <td>BIDS2111</td>
                         <td>Database Systems</td>
-                        <td>Prof. Johnson</td>
+                        <td>Ntate Linaoa</td>
                         <td>2</td>
                         <td>
                           <span className="badge bg-success">Active</span>
@@ -175,7 +197,6 @@ function PlDashboard() {
               <div className="bg-white p-3 border shadow-sm">
                 <h5>Quick Actions</h5>
                 <button className="btn btn-dark w-100 mb-2">Add Course</button>
-                <button className="btn btn-outline-dark w-100 mb-2">Assign Modules</button>
                 <button className="btn btn-outline-dark w-100 mb-2">View PRL Reports</button>
                 <button className="btn btn-outline-dark w-100 mb-2">Monitor Classes</button>
                 <button className="btn btn-outline-dark w-100">Manage Lecturers</button>
@@ -186,17 +207,17 @@ function PlDashboard() {
                 <h5>Recent PRL Reports</h5>
                 <div className="alert alert-info p-2">
                   <small>
-                    <strong>Dr. Smith:</strong> Submitted Web Design program review
+                    <strong>Mr Shungu:</strong> Submitted Web Design program review
                   </small>
                 </div>
                 <div className="alert alert-info p-2">
                   <small>
-                    <strong>Prof. Johnson:</strong> Database Systems attendance report
+                    <strong>Ntate Taunyane:</strong> Database Systems attendance report
                   </small>
                 </div>
                 <div className="alert alert-info p-2">
                   <small>
-                    <strong>Dr. Brown:</strong> Software Engineering curriculum update
+                    <strong>Ntate Poli:</strong> Software Engineering curriculum update
                   </small>
                 </div>
               </div>

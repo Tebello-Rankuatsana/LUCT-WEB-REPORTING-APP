@@ -67,8 +67,8 @@ function Login(){
                     <div className='col-md-6 right-box'>
                         <div className='row align-items-center'>
                             <div className='header-text md-4'>
-                                <p className='text-white'>hello!</p>
-                                <p className='text-white'>Welcome back</p>
+                                <p className='text-white'></p>
+                                <p className='text-white'></p>
                             </div>
                             <div className='input-group mb-3'>
                                 <input 

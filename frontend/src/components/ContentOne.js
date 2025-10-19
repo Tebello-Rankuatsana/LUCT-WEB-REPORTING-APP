@@ -6,12 +6,12 @@ function Content(){
         <div className="p-3 bg-light">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 bg-light ">
+                    <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3  bg-light ">
                         <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
                             <i className="bi bi-pin fs-1 text-success"></i>
                             <div>
                                 <span>Reports submitted</span>
-                                <h2>35</h2>
+                                <h2 className="fw-bold">35</h2>
                             </div>
                         </div>
                     </div>
@@ -21,7 +21,7 @@ function Content(){
                             <i className="bi bi-calendar-week fs-1 text-primary"></i>
                             <div>
                                 <span>Classes</span>
-                                <h2>26</h2>
+                                <h2 className="fw-bold">26</h2>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@ function Content(){
                             <i className="bi bi-graph-up-arrow fs-1 text-danger"></i>
                             <div>
                                 <span>Average Attendance Rate</span>
-                                <h2>90%</h2>
+                                <h2 className="fw-bold">90%</h2>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ function Content(){
                             <i className="bi bi-clock-history fs-1 text-warning"></i>
                             <div>
                                 <span>Pending Reports</span>
-                                <h2>1</h2>
+                                <h2 className="fw-bold">1</h2>
                             </div>
                         </div>
                     </div>

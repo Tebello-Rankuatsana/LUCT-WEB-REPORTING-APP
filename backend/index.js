@@ -5,6 +5,10 @@ const pool = require('./db');// database connection
 const app = express();
 const loginRoute = require('./routes/loginRoute.js');
 const reportsRoutes = require('./routes/ReportsRoute.js');
+const classesRoutes = require('./routes/ClassesRoute.js');
+const ratingsRoutes = require('./routes/RatingsRoute.js');
+const LecturersRoutes = require('./routes/LecturersRoute.js');
+const coursesRoutes = require('./routes/CoursesRoute.js');
 
 // middleware - authenticating a user
 // middleware(just before we hit the endpoints)
@@ -15,9 +19,14 @@ app.use(cors({
 // middleware to parse JSON body
 app.use(express.json());//this gives us access to request.body
 
-app.use('/api',loginRoute);
 
+// use Api's
+app.use('/api',loginRoute);
 app.use('/api/reports', reportsRoutes);
+app.use('/api/classes', classesRoutes);
+app.use('/api/ratings', ratingsRoutes);
+app.use('/api/lecturers', LecturersRoutes);
+app.use('/api/courses', coursesRoutes);
 
 app.get('/api/test',(req,res)=>{
     res.json({message: 'backend is working'})

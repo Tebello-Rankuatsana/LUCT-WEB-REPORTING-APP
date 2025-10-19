@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import logo from '../images/logo.webp';
 import API from '../api/axios';
 
@@ -44,7 +43,6 @@ function PrlDashboard() {
         >
           <i className={`bi ${collapsed ? "bi-chevron-right" : "bi-chevron-left"}`}></i>
         </button>
-
         <div className="px-3 mt-2 d-flex align-items-center">
           <Link to="/" className="d-flex align-items-center text-white text-decoration-none">
             <img
@@ -68,8 +66,8 @@ function PrlDashboard() {
               to="/"
               className="d-flex align-items-center p-2 text-white text-decoration-none"
             >
-              <i className="bi bi-speedometer2 fs-4 me-3"></i>
-              {!collapsed && <span className="fs-5 fw-bold">Dashboard</span>}
+              <i className="bi bi-door-open fs-4 me-3"></i>
+              {!collapsed && <span className="fs-5 fw-bold">Back</span>}
             </Link>
           </li>
           <li className="nav-item my-1">
@@ -81,6 +79,24 @@ function PrlDashboard() {
               {!collapsed && <span className="fs-5 fw-bold">Reports</span>}
             </Link>
           </li>
+          <li className="nav-item my-1">
+            <Link
+              to="/Ratings"
+              className="d-flex align-items-center p-2 text-white text-decoration-none"
+            >
+              <i className="bi bi-star fs-4 me-3"></i>
+              {!collapsed && <span className="fs-5 fw-bold">Ratings</span>}
+            </Link>
+          </li>
+          <li className="nav-item my-1">
+            <Link
+              to="/Courses"
+              className="d-flex align-items-center p-2 text-white text-decoration-none"
+            >
+              <i className="bi bi-ui-radios fs-4 me-3"></i>
+              {!collapsed && <span className="fs-5 fw-bold">Courses</span>}
+            </Link>
+          </li>
         </ul>
 
         <div className="px-2 mb-3">
@@ -90,7 +106,7 @@ function PrlDashboard() {
             className="d-flex align-items-center p-2 text-white text-decoration-none"
           >
             <i className="bi bi-person-circle fs-4 me-3"></i>
-            {!collapsed && <span className="fs-5 fw-bold">Profile</span>}
+            {!collapsed && <span className="fs-5 fw-bold">PRL</span>}
           </Link>
         </div>
       </div>
@@ -130,6 +146,26 @@ function PrlDashboard() {
                 </div>
               </div>
             </div>
+
+            <div className="col-12 col-sm-6 col-md-3 p-2">
+              <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+                <i className="bi bi-book fs-1 text-primary"></i>
+                <div>
+                  <span>Courses</span>
+                  <h2>10</h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-12 col-sm-6 col-md-3 p-2">
+              <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+                <i className="bi bi-person-workspace fs-1 text-warning"></i>
+                <div>
+                  <span>Lecturers</span>
+                  <h2>4</h2>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="row mt-3">
@@ -155,6 +191,7 @@ function PrlDashboard() {
                           <th>Topic</th>
                           <th>Learning Outcomes</th>
                           <th>Recommendations</th>
+                          <th>Feedback</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -168,6 +205,7 @@ function PrlDashboard() {
                               <td>{report.topic}</td>
                               <td>{report.outcomes}</td>
                               <td>{report.recommendations || "None"}</td>
+                              <td><button className="text-white bg-dark">Send</button></td>
                             </tr>
                           ))
                         ) : (

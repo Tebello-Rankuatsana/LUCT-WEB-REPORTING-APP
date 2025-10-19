@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useState} from 'react';
+import {Link, useNavigate } from 'react-router-dom';
 import API from '../api/axios';
+import logo from '../images/logo.webp';
 
 function Reports() {
+    const [collapsed, setCollapsed] = useState(false)
+    const toggleSidebar = () => setCollapsed(!collapsed);
     const [formData, setFormData] = useState({
         class_id: '',
         week: '',
@@ -16,8 +18,6 @@ function Reports() {
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
-    // const user = JSON.parse(localStorage.getItem('user'));
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -66,13 +66,99 @@ function Reports() {
     };
 
     return (
+        <div className='d-flex vh-100'>
+            <div 
+                className="sidebar d-flex flex-column bg-black text-white vh-100 position-fixed"
+                style={{ width: collapsed ? '80px' : '250px', transition: 'width 0.3s' }}>        
+                    <button
+                        className="btn btn-light m-2"
+                        onClick={toggleSidebar}
+                        style={{ alignSelf: collapsed ? 'center' : 'flex-end' }}
+                    >
+                        <i className={`bi ${collapsed ? 'bi-chevron-right' : 'bi-chevron-left'}`}></i>
+                    </button>   
+        
+                    <div className="px-3 mt-2">
+                        <Link to="/" className="d-flex align-items-center text-white text-decoration-none">
+                            <img
+                                src={logo} 
+                                alt="limkokwing Logo"
+                                width='60px'
+                                style={{
+                                    width: collapsed ? '40px' : '50px',
+                                    height: collapsed ? '40px' : '50px',
+                                    transition: 'width 0.3s, height 0.3s',
+                                }}
+                            />
+                            {!collapsed && <span className="fs-4 fw-bold">LIMKOKWING</span>}
+                        </Link>
+                        <hr className="text-white mt-2" />
+                    </div>
+                    
+                    <ul className="nav nav-pills flex-column mt-2 px-2 flex-grow-1">
+                        <li className="nav-item my-1">
+                            <Link
+                                to="/lecturer"
+                                className="d-flex align-items-center p-2 text-white text-decoration-none"
+                            >
+                                <i className="bi bi-door-open fs-4 me-3"></i>
+                                {!collapsed && <span className="fs-5 fw-bold">Back</span>}
+                            </Link>
+                        </li>
+                        <li className="nav-item my-1">
+                            <Link
+                                to="/Report"
+                                className="d-flex align-items-center p-2 text-white text-decoration-none"
+                            >
+                                <i className="bi bi-file-earmark-plus-fill fs-4 me-3"></i>
+                                {!collapsed && <span className="fs-5 fw-bold">Report</span>}
+                            </Link>
+                        </li>
+                        <li className="nav-item my-1">
+                            <Link
+                                to="/Classes"
+                                className="d-flex align-items-center p-2 text-white text-decoration-none"
+                            >
+                                <i className="bi bi-people fs-4 me-3"></i>
+                                {!collapsed && <span className="fs-5 fw-bold">Classes</span>}
+                            </Link>
+                        </li>
+                        <li className="nav-item my-1">
+                            <Link
+                                to="/Ratings"
+                                className="d-flex align-items-center p-2 text-white text-decoration-none"
+                            >
+                                <i className="bi bi-star fs-4 me-3"></i>
+                                {!collapsed && <span className="fs-5 fw-bold">Ratings</span>}
+                            </Link>
+                        </li>
+                    </ul>
+                <div className="px-2 mb-3">
+                    <hr className="text-white" />
+                    <Link
+                    to="/Profile"
+                    className="d-flex align-items-center p-2 text-white text-decoration-none"
+                    >
+                    <i className="bi bi-person-circle fs-4 me-3"></i>
+                    {!collapsed && <span className="fs-5 fw-bold">Lecturer</span>}
+                    </Link>
+                </div>
+            </div>
+        <div
+        style={{
+            marginLeft: collapsed ? "80px": "250px",
+            transition: "margin-left 0.3s",
+            width: `calc(100% - ${collapsed ? "80px" : "250px"})`,
+        }}
+        className='p-3 bg-light min-vh-100'
+        >
         <div className="container mt-4">
             <div className="row justify-content-center">
                 <div className="col-md-10">
                     <div className="card shadow-sm">
                         <div className="card-header bg-dark text-white">
-                            <h4 className="mb-0">LUCT Lecturer Reporting Form</h4>
-                            <small>Faculty of Information Communication Technology</small>
+                            <h4 className="mb-0">Lecturer Reporting Form</h4>
+                            <small>FICT</small>
                         </div>
                         <div className="card-body p-4">
                             {message && (
@@ -190,7 +276,7 @@ function Reports() {
                                     <button 
                                         type="button"
                                         className="btn btn-secondary"
-                                        onClick={() => navigate('/dashboard')}
+                                        onClick={() => navigate('/lecturer')}
                                     >
                                         Cancel
                                     </button>
@@ -203,6 +289,8 @@ function Reports() {
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
         </div>
     );
 }
