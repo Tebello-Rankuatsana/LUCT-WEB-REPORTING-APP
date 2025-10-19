@@ -1,9 +1,10 @@
 import './login.css';
 import image from '../../images/lim logo.jpg';
 import back from '../../images/tim-navis-Flxl7OUuO1M-unsplash.jpg';
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import API from '../../api/axios';
 
 
 function Login(){
@@ -17,7 +18,7 @@ function Login(){
         setError("");
 
         try {
-        const res = await axios.post("http://localhost:5000/api/login", {
+        const res = await API.post("/api/login", {
             email,
             password,
         });
