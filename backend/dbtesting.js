@@ -16,7 +16,7 @@ async function dbtesting() {
         console.log('Server time:',res.rows[0]);
         console.log('connection established');
     }catch(err){
-        console.log('fahhhhh',err.stack);
+        console.log('Error',err.stack);
     }finally{
         await pool.end();
     }
